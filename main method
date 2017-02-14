@@ -1,0 +1,61 @@
+
+//***************************************************************************************
+// Vowels.java            Author: Michelle Holmes   
+//
+// This program asks for a user to input a string. Then counts how many times each vowel 
+// appears in the string as well as how many non-vowel characters. 
+//***************************************************************************************
+import java.util.Scanner;
+public class Vowels 
+{
+	//---------------------------------------------------------------------------------
+	// Creates a vowel and non-vowel character counting program from a sentence
+	// inputed by the user. 
+	//---------------------------------------------------------------------------------
+
+	public static void main(String[] args) 
+	{
+	int countA = 0, countE = 0, countI = 0, countO = 0, countU = 0, countNv = 0; 
+	char letters;       // delcares int (above), char and string (below) variables.
+	String sentence; 
+	
+	Scanner scan = new Scanner(System.in);	//instantiates scanner object.
+		
+	System.out.println("Enter a sentence: ");    // request string from user.
+	sentence = scan.nextLine();                 // scans users sentence
+	
+	for (int i = 0; i < sentence.length(); i++)  // for loop to index each letter in sentence
+		{
+		letters = (sentence.charAt(i));     // uses charAt to turn index letter to char variable
+	
+			switch (letters)             // uses switch to assign case to matching char variables
+			{
+				case 'a':
+					countA++;
+					break;
+				case 'e':                 // counts each vowel that matches char variable in 
+					countE++;             // inputed sentence
+					break;
+				case 'i':
+					countI++;
+					break;
+				case 'o':
+					countO++;
+					break;
+				case 'u':
+					countU++;
+					break;
+				default:                  // if no other vowel matches default counts
+					countNv++;            // non-vowel characters
+			}
+		}
+	System.out.println("The number of a's are: " + countA);
+	System.out.println("The number of e's are: " + countE);
+	System.out.println("The number of i's are: " + countI);  // Prints each vowel 
+	System.out.println("The number of o's are: " + countO);  // and non-vowel count
+	System.out.println("The number of u's are: " + countU);
+	System.out.println("The number of non-vowel characters are: " + countNv);
+		
+	}
+
+}
